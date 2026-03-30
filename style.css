@@ -1028,3 +1028,14 @@ footer {
 .review-list::-webkit-scrollbar-thumb:hover {
     background: #554fd8;
 }
+/* Temporary debug CSS */
+#options-grid {
+    border: 2px solid red !important; /* To see if container exists */
+    min-height: 200px !important;
+}
+
+.option-card {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}

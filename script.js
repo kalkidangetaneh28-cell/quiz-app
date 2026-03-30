@@ -42,6 +42,7 @@ const wrongSound = document.getElementById('wrong-sound');
 const timerSound = document.getElementById('timer-sound');
 
 // Quiz Data
+// Quiz Data - COMPLETE WITH 6 CATEGORIES
 const quizQuestions = {
     general: [
         {
@@ -103,8 +104,21 @@ const quizQuestions = {
             options: ["1943", "1944", "1945", "1946"],
             correct: 2,
             difficulty: "medium"
+        },
+        {
+            question: "What is the longest river in the world?",
+            options: ["Amazon River", "Nile River", "Yangtze River", "Mississippi River"],
+            correct: 1,
+            difficulty: "hard"
+        },
+        {
+            question: "In which country would you find the Great Barrier Reef?",
+            options: ["Brazil", "Australia", "Mexico", "Thailand"],
+            correct: 1,
+            difficulty: "hard"
         }
     ],
+    
     science: [
         {
             question: "What is the speed of light?",
@@ -135,9 +149,290 @@ const quizQuestions = {
             options: ["Jupiter", "Saturn", "Uranus", "Neptune"],
             correct: 1,
             difficulty: "hard"
+        },
+        {
+            question: "What is H₂O commonly known as?",
+            options: ["Oxygen", "Hydrogen", "Water", "Carbon Dioxide"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "What force pulls objects toward the Earth?",
+            options: ["Magnetism", "Gravity", "Friction", "Inertia"],
+            correct: 1,
+            difficulty: "easy"
+        },
+        {
+            question: "Which organ pumps blood throughout the body?",
+            options: ["Liver", "Lungs", "Heart", "Brain"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "What planet is known for its rings?",
+            options: ["Jupiter", "Mars", "Saturn", "Venus"],
+            correct: 2,
+            difficulty: "medium"
+        },
+        {
+            question: "What is the process by which plants make food?",
+            options: ["Respiration", "Photosynthesis", "Digestion", "Transpiration"],
+            correct: 1,
+            difficulty: "medium"
         }
     ],
-    // Add more categories as needed...
+    
+    history: [
+        {
+            question: "Who was the first president of the United States?",
+            options: ["Thomas Jefferson", "Abraham Lincoln", "George Washington", "John Adams"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "In which year did the Titanic sink?",
+            options: ["1905", "1912", "1920", "1898"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "Which ancient civilization built the pyramids?",
+            options: ["Romans", "Greeks", "Egyptians", "Mayans"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "Who discovered America?",
+            options: ["Christopher Columbus", "Vasco da Gama", "Marco Polo", "Ferdinand Magellan"],
+            correct: 0,
+            difficulty: "medium"
+        },
+        {
+            question: "What year did World War I begin?",
+            options: ["1912", "1914", "1916", "1918"],
+            correct: 1,
+            difficulty: "hard"
+        },
+        {
+            question: "Which empire was ruled by Julius Caesar?",
+            options: ["Greek Empire", "Roman Empire", "Ottoman Empire", "British Empire"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "Who was the first man to walk on the moon?",
+            options: ["Buzz Aldrin", "Neil Armstrong", "Yuri Gagarin", "John Glenn"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "Which wall divided East and West Berlin?",
+            options: ["Great Wall", "Berlin Wall", "Iron Wall", "Freedom Wall"],
+            correct: 1,
+            difficulty: "hard"
+        },
+        {
+            question: "Who wrote the Declaration of Independence?",
+            options: ["Benjamin Franklin", "Thomas Jefferson", "John Adams", "George Washington"],
+            correct: 1,
+            difficulty: "hard"
+        },
+        {
+            question: "What was the main cause of the Cold War?",
+            options: ["Economic competition", "Territorial disputes", "Ideological differences", "Religious conflicts"],
+            correct: 2,
+            difficulty: "hard"
+        }
+    ],
+    
+    geography: [
+        {
+            question: "Which country has the largest population?",
+            options: ["India", "United States", "China", "Indonesia"],
+            correct: 2,
+            difficulty: "medium"
+        },
+        {
+            question: "What is the capital of Japan?",
+            options: ["Seoul", "Beijing", "Tokyo", "Bangkok"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "Which desert is the largest in the world?",
+            options: ["Sahara", "Arabian", "Gobi", "Kalahari"],
+            correct: 0,
+            difficulty: "medium"
+        },
+        {
+            question: "What is the longest river in Africa?",
+            options: ["Congo River", "Nile River", "Niger River", "Zambezi River"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "Which country is known as the Land of the Rising Sun?",
+            options: ["China", "South Korea", "Japan", "Thailand"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "What is the smallest country in the world?",
+            options: ["Monaco", "San Marino", "Vatican City", "Liechtenstein"],
+            correct: 2,
+            difficulty: "hard"
+        },
+        {
+            question: "Which U.S. state is known as the Sunshine State?",
+            options: ["California", "Florida", "Texas", "Hawaii"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "What is the capital of Australia?",
+            options: ["Sydney", "Melbourne", "Canberra", "Perth"],
+            correct: 2,
+            difficulty: "hard"
+        },
+        {
+            question: "Which mountain range separates Europe and Asia?",
+            options: ["Alps", "Himalayas", "Ural Mountains", "Andes"],
+            correct: 2,
+            difficulty: "hard"
+        },
+        {
+            question: "Which African country was never colonized?",
+            options: ["Ethiopia", "Egypt", "South Africa", "Kenya"],
+            correct: 0,
+            difficulty: "hard"
+        }
+    ],
+    
+    technology: [
+        {
+            question: "Who is the founder of Microsoft?",
+            options: ["Steve Jobs", "Bill Gates", "Mark Zuckerberg", "Larry Page"],
+            correct: 1,
+            difficulty: "easy"
+        },
+        {
+            question: "What does 'HTTP' stand for?",
+            options: ["HyperText Transfer Protocol", "High Transfer Text Protocol", "Hyper Transfer Text Process", "High Text Transfer Process"],
+            correct: 0,
+            difficulty: "medium"
+        },
+        {
+            question: "Which company developed the Android operating system?",
+            options: ["Apple", "Microsoft", "Google", "Samsung"],
+            correct: 2,
+            difficulty: "medium"
+        },
+        {
+            question: "What year was the first iPhone released?",
+            options: ["2005", "2007", "2009", "2011"],
+            correct: 1,
+            difficulty: "hard"
+        },
+        {
+            question: "What does 'CPU' stand for?",
+            options: ["Central Processing Unit", "Computer Processing Unit", "Central Program Unit", "Computer Program Unit"],
+            correct: 0,
+            difficulty: "easy"
+        },
+        {
+            question: "Which programming language is known for web development?",
+            options: ["Python", "Java", "JavaScript", "C++"],
+            correct: 2,
+            difficulty: "medium"
+        },
+        {
+            question: "What does 'URL' stand for?",
+            options: ["Uniform Resource Locator", "Universal Resource Link", "Uniform Resource Link", "Universal Resource Locator"],
+            correct: 0,
+            difficulty: "medium"
+        },
+        {
+            question: "Who invented the World Wide Web?",
+            options: ["Steve Jobs", "Bill Gates", "Tim Berners-Lee", "Mark Zuckerberg"],
+            correct: 2,
+            difficulty: "hard"
+        },
+        {
+            question: "What is the most popular database language?",
+            options: ["Python", "Java", "SQL", "HTML"],
+            correct: 2,
+            difficulty: "hard"
+        },
+        {
+            question: "Which of these is NOT a programming language?",
+            options: ["HTML", "Python", "Java", "C++"],
+            correct: 0,
+            difficulty: "easy"
+        }
+    ],
+    
+    entertainment: [
+        {
+            question: "Who directed the movie 'Titanic'?",
+            options: ["Steven Spielberg", "James Cameron", "Christopher Nolan", "Peter Jackson"],
+            correct: 1,
+            difficulty: "easy"
+        },
+        {
+            question: "Which singer is known as the 'Queen of Pop'?",
+            options: ["Beyoncé", "Madonna", "Taylor Swift", "Lady Gaga"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "What is the highest-grossing film of all time?",
+            options: ["Avatar", "Avengers: Endgame", "Titanic", "Star Wars: The Force Awakens"],
+            correct: 1,
+            difficulty: "hard"
+        },
+        {
+            question: "Which TV show features characters named Ross, Rachel, and Monica?",
+            options: ["How I Met Your Mother", "The Office", "Friends", "Seinfeld"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "Who wrote the Harry Potter series?",
+            options: ["J.R.R. Tolkien", "Stephen King", "J.K. Rowling", "George R.R. Martin"],
+            correct: 2,
+            difficulty: "easy"
+        },
+        {
+            question: "Which artist painted 'Starry Night'?",
+            options: ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dalí"],
+            correct: 1,
+            difficulty: "medium"
+        },
+        {
+            question: "What is the name of the fictional continent in Game of Thrones?",
+            options: ["Middle-earth", "Narnia", "Westeros", "Hogwarts"],
+            correct: 2,
+            difficulty: "medium"
+        },
+        {
+            question: "Which band performed the song 'Bohemian Rhapsody'?",
+            options: ["The Beatles", "Led Zeppelin", "Queen", "The Rolling Stones"],
+            correct: 2,
+            difficulty: "hard"
+        },
+        {
+            question: "Who won the first season of American Idol?",
+            options: ["Kelly Clarkson", "Carrie Underwood", "Jennifer Hudson", "Fantasia Barrino"],
+            correct: 0,
+            difficulty: "hard"
+        },
+        {
+            question: "Which video game features a character named Mario?",
+            options: ["Sonic the Hedgehog", "Super Mario Bros", "The Legend of Zelda", "Pokémon"],
+            correct: 1,
+            difficulty: "easy"
+        }
+    ]
 };
 
 // Quiz State
@@ -752,3 +1047,79 @@ const confettiCSS = `
 const style = document.createElement('style');
 style.textContent = confettiCSS;
 document.head.appendChild(style);
+// Add this function after line 350 (after loadQuestion function)
+function debugShowOptions() {
+    const question = questions[currentQuestionIndex];
+    if (!question) return;
+    
+    console.log("DEBUG - Question:", question);
+    console.log("DEBUG - Options:", question.options);
+    
+    // Manually create options if grid is empty
+    if (optionsGrid.innerHTML.trim() === '') {
+        question.options.forEach((option, index) => {
+            const div = document.createElement('div');
+            div.className = 'option-card';
+            div.innerHTML = `
+                <div class="option-letter">${String.fromCharCode(65 + index)}</div>
+                <div class="option-text">${option}</div>
+            `;
+            div.addEventListener('click', () => selectOption(div, index));
+            optionsGrid.appendChild(div);
+        });
+        console.log("DEBUG - Options manually created");
+    }
+}
+
+// Call it after loadQuestion
+// In loadQuestion function, add this at the end:
+setTimeout(debugShowOptions, 100);
+// Replace loadQuestion function with this:
+function loadQuestion() {
+    if (currentQuestionIndex >= questions.length) {
+        endQuiz();
+        return;
+    }
+
+    const question = questions[currentQuestionIndex];
+    
+    // Update UI
+    currentQuestionEl.textContent = currentQuestionIndex + 1;
+    questionText.textContent = question.question;
+    
+    // Clear previous options
+    optionsGrid.innerHTML = '';
+    
+    // Create option cards - SIMPLIFIED VERSION
+    question.options.forEach((option, index) => {
+        const optionCard = document.createElement('div');
+        optionCard.className = 'option-card';
+        optionCard.dataset.index = index;
+        
+        optionCard.innerHTML = `
+            <div class="option-letter">${String.fromCharCode(65 + index)}</div>
+            <div class="option-text">${option}</div>
+        `;
+        
+        optionCard.addEventListener('click', () => selectOption(optionCard, index));
+        optionsGrid.appendChild(optionCard);
+    });
+    
+    // Hide feedback
+    feedbackContainer.classList.remove('show');
+    feedbackContainer.style.display = 'none';
+    
+    // Reset timer
+    startTimer();
+    
+    // Update progress
+    updateProgress();
+    
+    // Enable next button
+    nextBtn.disabled = true;
+    nextBtn.textContent = 'Next Question';
+    
+    // Debug
+    console.log("Question loaded:", question.question);
+    console.log("Options:", question.options);
+}
